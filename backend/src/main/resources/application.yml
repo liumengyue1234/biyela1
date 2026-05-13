@@ -1,0 +1,60 @@
+# Server Configuration
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+# Spring Configuration
+spring:
+  application:
+    name: pine-nematode-detection
+  
+  # MySQL Database Configuration
+  datasource:
+    url: jdbc:mysql://localhost:3306/pine_nematode_db?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      connection-timeout: 30000
+  
+  # JPA Configuration
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+  
+  # File Upload Configuration
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+# File Storage Path
+file:
+  upload:
+    path: D:/pine-nematode/uploads
+  model:
+    path: D:/pine-nematode/models
+  dataset:
+    path: D:/松材线虫/标注
+
+# Python Model Path
+python:
+  home: D:/Python
+  executable: D:/Python/python.exe
+  script-path: D:/workbuddyyy/2026-05-13-task-3/pine-nematode-detection/models/scripts
+
+# Logging Configuration
+logging:
+  level:
+    root: INFO
+    com.bio.detect: DEBUG
+  file:
+    name: logs/pine-nematode.log
