@@ -135,18 +135,39 @@ public class DetectionService {
      * 调用Python检测脚本
      */
     private String callPythonDetection(String imagePath, String modelType, Double threshold) throws IOException {
-        String script = scriptPath + "/detect_" + modelType.toLowerCase() + ".py";
-        
-        ProcessBuilder pb = new ProcessBuilder(
-                pythonPath,
-                script,
-                "--image", imagePath,
-                "--threshold", String.valueOf(threshold != null ? threshold : 0.5)
-        );
+        String script;
+
+        // 根据模型类型选择脚本
+        if (modelType.startsWith("YOLO")) {
+            script = scriptPath + "/detect_yolo_compare.py";
+        } else if (modelType.equals("MASK_RCNN")) {
+            script = scriptPath + "/detect_mask_rcnn.py";
+        } else {
+            script = scriptPath + "/detect_unet.py";
+        }
+
+        ProcessBuilder pb;
+        if (modelType.startsWith("YOLO")) {
+            // YOLO系列使用对比脚本
+            pb = new ProcessBuilder(
+                    pythonPath,
+                    script,
+                    "--image", imagePath,
+                    "--versions", modelType.toLowerCase(),
+                    "--conf", String.valueOf(threshold != null ? threshold : 0.5)
+            );
+        } else {
+            pb = new ProcessBuilder(
+                    pythonPath,
+                    script,
+                    "--image", imagePath,
+                    "--threshold", String.valueOf(threshold != null ? threshold : 0.5)
+            );
+        }
         pb.redirectErrorStream(true);
-        
+
         Process process = pb.start();
-        
+
         // 读取输出
         StringBuilder output = new StringBuilder();
         try (java.io.BufferedReader reader = new java.io.BufferedReader(
@@ -156,13 +177,13 @@ public class DetectionService {
                 output.append(line);
             }
         }
-        
+
         try {
             process.waitFor();
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
-        
+
         return output.toString();
     }
     

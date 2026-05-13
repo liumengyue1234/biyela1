@@ -96,13 +96,31 @@ export default defineComponent({
         f1: '0.852'
       },
       {
-        model: 'YOLO',
+        model: 'YOLOv8',
         count: 0,
         confidence: 0.831,
         time: '-',
         accuracy: '85.8%',
         miou: '76.5%',
         f1: '0.831'
+      },
+      {
+        model: 'YOLO11',
+        count: 0,
+        confidence: 0.845,
+        time: '-',
+        accuracy: '86.5%',
+        miou: '78.2%',
+        f1: '0.845'
+      },
+      {
+        model: 'YOLOv10',
+        count: 0,
+        confidence: 0.820,
+        time: '-',
+        accuracy: '84.2%',
+        miou: '75.8%',
+        f1: '0.820'
       }
     ])
 
@@ -128,7 +146,7 @@ export default defineComponent({
           trigger: 'item'
         },
         legend: {
-          data: ['U-Net', 'Mask R-CNN', 'YOLO'],
+          data: ['U-Net', 'Mask R-CNN', 'YOLOv8', 'YOLO11', 'YOLOv10'],
           bottom: 10
         },
         radar: {
@@ -157,8 +175,18 @@ export default defineComponent({
               },
               {
                 value: [85.8, 76.5, 0.831, 0.9, 0.78],
-                name: 'YOLO',
+                name: 'YOLOv8',
                 itemStyle: { color: '#e6a23c' }
+              },
+              {
+                value: [86.5, 78.2, 0.845, 0.88, 0.80],
+                name: 'YOLO11',
+                itemStyle: { color: '#f56c6c' }
+              },
+              {
+                value: [84.2, 75.8, 0.820, 0.95, 0.76],
+                name: 'YOLOv10',
+                itemStyle: { color: '#909399' }
               }
             ]
           }

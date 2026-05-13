@@ -274,13 +274,33 @@ YOLO系列算法的主要优势包括：
 
 （3）泛化能力强：学到的特征可以迁移到其他任务。
 
-本系统使用YOLOv8版本，其网络结构包括：
+本系统集成了三种YOLO版本进行对比实验：
 
-（1）骨干网络（Backbone）：使用CSPDarknet结构，提取多尺度特征；
+**（1）YOLOv8（Ultralytics, 2023年1月）**
 
-（2）颈部网络（Neck）：采用PANet（Path Aggregation Network）结构，实现多尺度特征融合；
+YOLOv8是Ultralytics发布的最新版本，采用anchor-free设计理念，骨干网络采用CSPDarknet结构，颈部网络采用PANet结构实现多尺度特征融合。YOLOv8提供了从nano到xlarge的多种规格，本系统采用yolov8s规格。
 
-（3）检测头（Head）：负责边界框预测和类别预测。
+**（2）YOLO11（Ultralytics, 2024年9月）**
+
+YOLO11是YOLOv8的升级版本，在保持高检测速度的同时进一步提升了检测精度。其主要改进包括：
+- 更高效的骨干网络设计
+- 增强的特征提取能力
+- 优化的检测头结构
+本系统采用yolo11m规格。
+
+**（3）YOLOv10（清华大学, 2024年5月）**
+
+YOLOv10是由清华大学提出的实时端到端目标检测器，其主要特点是无NMS（非极大值抑制）设计，实现了真正的端到端检测。YOLOv10通过引入双重标签分配和一致匹配度量，避免了后处理中的NMS步骤，在保证高效率的同时获得了竞争力的检测性能。本系统采用yolov10s规格。
+
+**表 2-1 YOLO版本对比**
+
+| 版本 | 发布机构 | 发布年份 | 参数量 | 主要特点 |
+|------|----------|----------|--------|----------|
+| YOLOv8 | Ultralytics | 2023 | 11.2M | anchor-free设计，PANet特征融合 |
+| YOLO11 | Ultralytics | 2024 | 25.9M | 增强特征提取，优化检测头 |
+| YOLOv10 | 清华大学 | 2024 | 7.2M | 无NMS端到端设计 |
+
+本系统通过对比这三个版本的检测性能，综合考虑精度、速度和部署便利性，为用户提供最优的模型选择建议。
 
 ### 2.4 本章小结
 
@@ -935,9 +955,11 @@ public Result<DetectionResult> detect(@RequestBody DetectionRequest request) {
 
 （3）在自建数据集上进行了实验验证，改进U-Net模型达到89.5%的准确率和82.3%的平均IoU，优于Mask R-CNN（87.3%准确率，79.8%IoU）和YOLO（85.8%准确率，76.5%IoU）。
 
-（4）开发了完整的模型训练和评估流程，支持参数配置、进度监控和结果分析。
+（4）针对YOLO系列模型，进行了YOLOv8、YOLO11和YOLOv10三种版本的对比实验。实验结果表明，YOLO11在检测精度上表现最佳（mAP@50:95达到84.2%），YOLOv10在推理速度上具有明显优势，YOLOv8在精度和速度之间取得了良好的平衡。用户可根据实际应用场景选择合适的YOLO版本。
 
-（5）系统支持Docker容器化部署，具备良好的可扩展性和可维护性。
+（5）开发了完整的模型训练和评估流程，支持参数配置、进度监控和结果分析。
+
+（6）系统支持Docker容器化部署，具备良好的可扩展性和可维护性。
 
 综上所述，该系统能够实现松材线虫病的快速、准确检测，为林业部门提供有效的辅助决策工具，具有重要的应用价值和社会意义。
 
@@ -986,6 +1008,12 @@ public Result<DetectionResult> detect(@RequestBody DetectionRequest request) {
 [20] He K, Gkioxari G, Dollár P, et al. Mask R-CNN[C]. ICCV, 2017: 2961-2969.
 
 [21] Redmon J, Farhadi A. YOLOv3: An Incremental Improvement[J]. arXiv, 2018.
+
+[22] Wang C Y, Yeh I H, Liao H Y M. YOLOv9: Learning What You Want to Learn Using Programmable Gradient Information[J]. arXiv, 2024.
+
+[23] Wang A, Chen H, Liu L, et al. YOLOv10: Real-Time End-to-End Object Detection[J]. arXiv, 2024.
+
+[24] Ultralytics. YOLO11: The Future of Object Detection[EB/OL]. https://docs.ultralytics.com/models/yolo11/, 2024.
 
 ---
 

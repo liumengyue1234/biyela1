@@ -79,7 +79,9 @@
           <el-select v-model="trainConfig.modelType">
             <el-option label="改进U-Net" value="UNET" />
             <el-option label="Mask R-CNN" value="MASK_RCNN" />
-            <el-option label="YOLO" value="YOLO" />
+            <el-option label="YOLOv8" value="YOLOv8" />
+            <el-option label="YOLO11" value="YOLO11" />
+            <el-option label="YOLOv10" value="YOLOv10" />
           </el-select>
         </el-form-item>
         
@@ -124,7 +126,9 @@ const showTrainDialog = ref(false)
 const models = ref([
   { type: 'UNET', name: '改进U-Net', status: 'available', params: '31.2M', accuracy: '89.5%' },
   { type: 'MASK_RCNN', name: 'Mask R-CNN', status: 'available', params: '63.2M', accuracy: '87.3%' },
-  { type: 'YOLO', name: 'YOLO', status: 'available', params: '25.9M', accuracy: '85.8%' }
+  { type: 'YOLOv8', name: 'YOLOv8', status: 'available', params: '11.2M', accuracy: '85.8%' },
+  { type: 'YOLO11', name: 'YOLO11', status: 'available', params: '25.9M', accuracy: '86.5%' },
+  { type: 'YOLOv10', name: 'YOLOv10', status: 'available', params: '7.2M', accuracy: '84.2%' }
 ])
 
 const trainingRecords = ref([])

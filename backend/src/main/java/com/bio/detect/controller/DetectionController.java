@@ -92,8 +92,10 @@ public class DetectionController {
         Map<String, String> models = new HashMap<>();
         models.put("UNET", "改进U-Net分割模型 - 语义分割，适合精细边界检测");
         models.put("MASK_RCNN", "Mask R-CNN实例分割模型 - 实例分割，可区分不同目标");
-        models.put("YOLO", "YOLO目标检测模型 - 实时检测，速度快");
-        
+        models.put("YOLOv8", "YOLOv8 - Ultralytics经典版本，精度与速度平衡");
+        models.put("YOLO11", "YOLO11 - 2024年新版，增强特征提取能力");
+        models.put("YOLOv10", "YOLOv10 - 清华大学端到端版本，无需NMS后处理");
+
         return ResponseEntity.ok(models);
     }
 }

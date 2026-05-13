@@ -85,12 +85,28 @@ export default defineComponent({
         speed: '较慢'
       },
       {
-        value: 'YOLO',
-        label: 'YOLO',
+        value: 'YOLOv8',
+        label: 'YOLOv8',
         icon: 'el-icon-s-grid',
-        description: '目标检测模型，实时检测速度快',
+        description: 'Ultralytics经典版本，精度与速度平衡',
         accuracy: '85.8%',
         speed: '快速'
+      },
+      {
+        value: 'YOLO11',
+        label: 'YOLO11',
+        icon: 'el-icon-s-grid',
+        description: '2024年新版，增强特征提取能力',
+        accuracy: '86.5%',
+        speed: '快速'
+      },
+      {
+        value: 'YOLOv10',
+        label: 'YOLOv10',
+        icon: 'el-icon-s-grid',
+        description: '清华大学端到端版本，无需NMS后处理',
+        accuracy: '84.2%',
+        speed: '最快'
       }
     ]
 

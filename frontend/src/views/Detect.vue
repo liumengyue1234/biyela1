@@ -44,7 +44,9 @@
                   <el-select v-model="params.modelType" placeholder="选择模型">
                     <el-option label="改进U-Net" value="UNET" />
                     <el-option label="Mask R-CNN" value="MASK_RCNN" />
-                    <el-option label="YOLO" value="YOLO" />
+                    <el-option label="YOLOv8" value="YOLOv8" />
+                    <el-option label="YOLO11" value="YOLO11" />
+                    <el-option label="YOLOv10" value="YOLOv10" />
                   </el-select>
                 </el-form-item>
                 
