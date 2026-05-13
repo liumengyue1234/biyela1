@@ -1,0 +1,395 @@
+{
+  "generated_at": "2026-05-13T18:16:18.096562",
+  "total_images": 3,
+  "images": {
+    "image_8.jpg": {
+      "path": "image_8.jpg",
+      "models": {
+        "UNET": {
+          "nematode_count": 3,
+          "confidence": 0.876,
+          "processing_time": 0.234,
+          "simulated": true,
+          "detection_results": [
+            {
+              "bbox": [
+                120,
+                85,
+                185,
+                160
+              ],
+              "confidence": 0.891
+            },
+            {
+              "bbox": [
+                280,
+                200,
+                350,
+                290
+              ],
+              "confidence": 0.867
+            },
+            {
+              "bbox": [
+                95,
+                310,
+                160,
+                385
+              ],
+              "confidence": 0.871
+            }
+          ]
+        },
+        "MASK_RCNN": {
+          "nematode_count": 3,
+          "confidence": 0.851,
+          "processing_time": 0.498,
+          "simulated": true,
+          "detection_results": [
+            {
+              "bbox": [
+                118,
+                82,
+                188,
+                165
+              ],
+              "confidence": 0.858
+            },
+            {
+              "bbox": [
+                275,
+                198,
+                355,
+                295
+              ],
+              "confidence": 0.845
+            },
+            {
+              "bbox": [
+                92,
+                308,
+                165,
+                390
+              ],
+              "confidence": 0.849
+            }
+          ]
+        },
+        "YOLO": {
+          "nematode_count": 4,
+          "confidence": 0.823,
+          "processing_time": 0.087,
+          "simulated": true,
+          "detection_results": [
+            {
+              "bbox": [
+                125,
+                90,
+                180,
+                155
+              ],
+              "confidence": 0.835
+            },
+            {
+              "bbox": [
+                278,
+                205,
+                348,
+                288
+              ],
+              "confidence": 0.812
+            },
+            {
+              "bbox": [
+                98,
+                315,
+                158,
+                382
+              ],
+              "confidence": 0.828
+            },
+            {
+              "bbox": [
+                200,
+                150,
+                260,
+                220
+              ],
+              "confidence": 0.818
+            }
+          ]
+        }
+      }
+    },
+    "image_11.jpg": {
+      "path": "image_11.jpg",
+      "models": {
+        "UNET": {
+          "nematode_count": 2,
+          "confidence": 0.892,
+          "processing_time": 0.228,
+          "simulated": true,
+          "detection_results": [
+            {
+              "bbox": [
+                200,
+                120,
+                280,
+                210
+              ],
+              "confidence": 0.898
+            },
+            {
+              "bbox": [
+                380,
+                280,
+                450,
+                360
+              ],
+              "confidence": 0.886
+            }
+          ]
+        },
+        "MASK_RCNN": {
+          "nematode_count": 2,
+          "confidence": 0.873,
+          "processing_time": 0.512,
+          "simulated": true,
+          "detection_results": [
+            {
+              "bbox": [
+                195,
+                115,
+                285,
+                215
+              ],
+              "confidence": 0.878
+            },
+            {
+              "bbox": [
+                375,
+                275,
+                455,
+                365
+              ],
+              "confidence": 0.868
+            }
+          ]
+        },
+        "YOLO": {
+          "nematode_count": 2,
+          "confidence": 0.845,
+          "processing_time": 0.092,
+          "simulated": true,
+          "detection_results": [
+            {
+              "bbox": [
+                205,
+                125,
+                275,
+                205
+              ],
+              "confidence": 0.852
+            },
+            {
+              "bbox": [
+                385,
+                285,
+                445,
+                355
+              ],
+              "confidence": 0.838
+            }
+          ]
+        }
+      }
+    },
+    "image_23.jpg": {
+      "path": "image_23.jpg",
+      "models": {
+        "UNET": {
+          "nematode_count": 4,
+          "confidence": 0.865,
+          "processing_time": 0.241,
+          "simulated": true,
+          "detection_results": [
+            {
+              "bbox": [
+                80,
+                60,
+                150,
+                140
+              ],
+              "confidence": 0.872
+            },
+            {
+              "bbox": [
+                180,
+                180,
+                250,
+                260
+              ],
+              "confidence": 0.861
+            },
+            {
+              "bbox": [
+                320,
+                100,
+                390,
+                180
+              ],
+              "confidence": 0.868
+            },
+            {
+              "bbox": [
+                250,
+                300,
+                320,
+                380
+              ],
+              "confidence": 0.858
+            }
+          ]
+        },
+        "MASK_RCNN": {
+          "nematode_count": 4,
+          "confidence": 0.842,
+          "processing_time": 0.505,
+          "simulated": true,
+          "detection_results": [
+            {
+              "bbox": [
+                78,
+                58,
+                155,
+                145
+              ],
+              "confidence": 0.848
+            },
+            {
+              "bbox": [
+                178,
+                178,
+                255,
+                265
+              ],
+              "confidence": 0.838
+            },
+            {
+              "bbox": [
+                318,
+                98,
+                395,
+                185
+              ],
+              "confidence": 0.845
+            },
+            {
+              "bbox": [
+                248,
+                298,
+                325,
+                385
+              ],
+              "confidence": 0.836
+            }
+          ]
+        },
+        "YOLO": {
+          "nematode_count": 5,
+          "confidence": 0.818,
+          "processing_time": 0.089,
+          "simulated": true,
+          "detection_results": [
+            {
+              "bbox": [
+                85,
+                65,
+                145,
+                135
+              ],
+              "confidence": 0.825
+            },
+            {
+              "bbox": [
+                185,
+                185,
+                245,
+                255
+              ],
+              "confidence": 0.812
+            },
+            {
+              "bbox": [
+                325,
+                105,
+                385,
+                175
+              ],
+              "confidence": 0.822
+            },
+            {
+              "bbox": [
+                255,
+                305,
+                315,
+                375
+              ],
+              "confidence": 0.815
+            },
+            {
+              "bbox": [
+                140,
+                220,
+                200,
+                290
+              ],
+              "confidence": 0.819
+            }
+          ]
+        }
+      }
+    }
+  },
+  "summary": {
+    "UNET": {
+      "total_count": 9,
+      "total_conf": 2.633,
+      "total_time": 0.703,
+      "avg_count": 3.0,
+      "avg_conf": 0.8777,
+      "avg_time": 0.234,
+      "images": [
+        "image_8.jpg",
+        "image_11.jpg",
+        "image_23.jpg"
+      ]
+    },
+    "MASK_RCNN": {
+      "total_count": 9,
+      "total_conf": 2.566,
+      "total_time": 1.515,
+      "avg_count": 3.0,
+      "avg_conf": 0.8553,
+      "avg_time": 0.505,
+      "images": [
+        "image_8.jpg",
+        "image_11.jpg",
+        "image_23.jpg"
+      ]
+    },
+    "YOLO": {
+      "total_count": 11,
+      "total_conf": 2.486,
+      "total_time": 0.268,
+      "avg_count": 3.7,
+      "avg_conf": 0.8287,
+      "avg_time": 0.089,
+      "images": [
+        "image_8.jpg",
+        "image_11.jpg",
+        "image_23.jpg"
+      ]
+    }
+  }
+}

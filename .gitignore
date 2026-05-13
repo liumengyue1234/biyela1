@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Model checkpoints (large files)
+*.pth
+*.pt
+*.h5
+*.ckpt
+
+# Data
+data/
+*.jpg
+*.png
+*.jpeg
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
